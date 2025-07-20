@@ -9,10 +9,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
 }
 
-.first-row button {
+.container {
+  background-color: black;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.first-row button,
+.second-row button {
   font-size: 25px;
   border: 0.5px solid black;
   border-radius: 30px;
@@ -22,9 +32,11 @@ body {
   font-family: "Roboto";
   text-align: center;
   cursor: pointer;
+  width: 50px;
 }
 
-.first-row button:hover {
+.first-row button:hover,
+.second-row button:hover {
   background-color: darkgray;
 }
 
@@ -33,7 +45,8 @@ body {
   background-color: #555;
 }
 
-.first-row {
+.first-row,
+.second-row {
   display: flex;
   padding: 10px;
   gap: 10px;
@@ -41,10 +54,12 @@ body {
   border-radius: 10px;
 }
 
-.first-row .division {
+.first-row .operations,
+.second-row .operations {
   background-color: orange;
 }
 
-.first-row .division:hover {
+.first-row .operations:hover,
+.second-row .operations:hover {
   background-color: darkorange;
 }
