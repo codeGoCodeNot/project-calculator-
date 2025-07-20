@@ -27,17 +27,23 @@ const buttonHandleClickSyntax = () => {
       } else if (button.classList.contains("operations")) {
         buttonHandleClickOperations(button.textContent);
       } else {
-        if (display.textContent === "0") {
-          display.textContent = button.textContent;
+        if (!operator) {
+          firstNumber =
+            (firstNumber === null ? "" : firstNumber) + button.textContent;
         } else {
-          display.textContent += button.textContent;
+          secondNumber =
+            (secondNumber === null ? "" : secondNumber) + button.textContent;
         }
+        displayText();
       }
     });
   });
 };
 
 const clearButton = () => {
+  firstNumber = null;
+  secondNumber = null;
+  operator = null;
   display.textContent = 0;
 };
 
@@ -64,8 +70,8 @@ const decimalButton = () => {
 };
 
 const buttonHandleClickOperations = (operations) => {
-  firstNumber = Number(display.textContent);
   operator = operations;
+  displayText();
 };
 
 const operationsButton = (num1, operations, num2) => {
@@ -85,15 +91,25 @@ const operationsButton = (num1, operations, num2) => {
 };
 
 const equalButton = () => {
-  if (firstNumber !== null && operator !== null) {
-    secondNumber = Number(display.textContent);
-    const result = operationsButton(firstNumber, operator, secondNumber);
+  if (firstNumber !== null && operator !== null && secondNumber !== null) {
+    const result = operationsButton(
+      Number(firstNumber),
+      operator,
+      Number(secondNumber)
+    );
+
     display.textContent = result;
 
     firstNumber = result;
     operator = null;
     secondNumber = null;
   }
+};
+
+const displayText = () => {
+  display.textContent = `${firstNumber ?? ""} ${operator ?? ""} ${
+    secondNumber ?? ""
+  }`.trim();
 };
 
 const init = () => {
