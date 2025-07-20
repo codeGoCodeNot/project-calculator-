@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
   <body>
     <div class="container">
     <div class="first-row">
       <button class="clear">AC</button>
       <button class="negation">+/-</button>
       <button class="percentage">%</button>
-      <button class="operations">&#247</button>
+      <button class="operations" id="divide">&#247</button>
     </div>
 
     <div class="second-row">
       <button class="numbers">7</button>
       <button class="numbers">8</button>
       <button class="numbers">9</button>
-      <button class="operations">x</button>
+      <button class="operations" id="multiply">x</button>
     </div>
 
     <div class="third-row">
       <button class="numbers">4</button>
       <button class="numbers">5</button>
       <button class="numbers">6</button>
-      <button class="operations">-</button>
+      <button class="operations" id="subtract">-</button>
     </div>
     <div class="fourth-row">
       <button class="numbers">1</button>
       <button class="numbers">2</button>
       <button class="numbers">3</button>
-      <button class="operations">+</button>
+      <button class="operations" id="add">+</button>
+    </div>
+
+    <div class="fifth-row">
+      <button class="default"></button>
+      <button class="numbers" id="zero">0</button>
+      <button class="point">.</button>
+      <button class="operations" id="equal">=</button>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>

@@ -11,6 +11,7 @@ body {
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  font-family: "Inter", sans-serif;
 }
 
 .container {
@@ -21,33 +22,33 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-.first-row button,
-.second-row button,
-.third-row button,
-.fourth-row button {
-  font-size: 25px;
-  border: 0.5px solid black;
+button {
+  font-size: 22px;
+  font-weight: 400;
+  border: none;
   border-radius: 30px;
   padding: 10px;
   background-color: grey;
   color: white;
-  font-family: "Roboto";
   text-align: center;
   cursor: pointer;
-  width: 50px;
+  width: 60px;
+  height: 60px;
 }
 
 .first-row button:hover,
 .second-row button:hover,
 .third-row button:hover,
-.fourth-row button:hover {
+.fourth-row button:hover,
+.fifth-row button:hover {
   background-color: darkgray;
 }
 
 .first-row button:active,
 .second-row button:active,
 .third-row button:active,
-.fourth-row button:active {
+.fourth-row button:active,
+.fifth-row button:active {
   transform: scale(0.95);
   background-color: #555;
 }
@@ -55,7 +56,8 @@ body {
 .first-row,
 .second-row,
 .third-row,
-.fourth-row {
+.fourth-row,
+.fifth-row {
   display: flex;
   padding: 10px;
   gap: 10px;
@@ -66,13 +68,19 @@ body {
 .first-row .operations,
 .second-row .operations,
 .third-row .operations,
-.fourth-row .operations {
+.fourth-row .operations,
+.fifth-row .operations {
   background-color: orange;
 }
 
 .first-row .operations:hover,
 .second-row .operations:hover,
 .third-row .operations:hover,
-.fourth-row .operations:hover {
+.fourth-row .operations:hover,
+.fifth-row .operations:hover {
   background-color: darkorange;
+}
+
+.default {
+  visibility: hidden;
 }
