@@ -1,14 +1,21 @@
 const display = document.querySelector(".display");
 const buttons = document.querySelectorAll("button");
-const numbers = document.querySelectorAll(".numbers");
 const clear = document.querySelector(".clear");
 const negation = document.querySelector(".negation");
 const percentage = document.querySelectorAll(".percentage");
 const decimal = document.querySelector(".point");
+const operations = document.querySelectorAll(".operations");
+const equal = document.querySelector("#equal");
+
+let firstNumber = null;
+let operator = null;
+let secondNumber = null;
 
 const buttonHandleClickSyntax = () => {
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
+      if (button.id === "equal") return;
+
       if (button.classList.contains("clear")) {
         clearButton();
       } else if (button.classList.contains("negation")) {
@@ -17,6 +24,8 @@ const buttonHandleClickSyntax = () => {
         percentageButton();
       } else if (button.classList.contains("point")) {
         decimalButton();
+      } else if (button.classList.contains("operations")) {
+        buttonHandleClickOperations(button.textContent);
       } else {
         if (display.textContent === "0") {
           display.textContent = button.textContent;
@@ -54,8 +63,42 @@ const decimalButton = () => {
   }
 };
 
+const buttonHandleClickOperations = (operations) => {
+  firstNumber = Number(display.textContent);
+  operator = operations;
+};
+
+const operationsButton = (num1, operations, num2) => {
+  switch (operations) {
+    case "+":
+      return num1 + num2;
+    case "-":
+      return num1 - num2;
+    case "x":
+      return num1 * num2;
+    case "÷":
+      if (num2 === 0) return "Undefined";
+      return num1 / num2;
+    default:
+      return num2;
+  }
+};
+
+const equalButton = () => {
+  if (firstNumber !== null && operator !== null) {
+    secondNumber = Number(display.textContent);
+    const result = operationsButton(firstNumber, operator, secondNumber);
+    display.textContent = result;
+
+    firstNumber = result;
+    operator = null;
+    secondNumber = null;
+  }
+};
+
 const init = () => {
   buttonHandleClickSyntax();
+  equal.addEventListener("click", equalButton);
 };
 
 init();
