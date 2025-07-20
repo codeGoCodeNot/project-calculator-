@@ -64,9 +64,18 @@ const percentageButton = () => {
 };
 
 const decimalButton = () => {
-  if (!display.textContent.includes(".")) {
-    display.textContent += ".";
+  let currentNumber = operator ? secondNumber : firstNumber;
+
+  if (!currentNumber?.includes?.(".")) {
+    currentNumber = (currentNumber ?? "0") + ".";
   }
+
+  if (!operator) {
+    firstNumber = currentNumber;
+  } else {
+    secondNumber = currentNumber;
+  }
+  displayText();
 };
 
 const buttonHandleClickOperations = (operations) => {
