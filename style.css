@@ -23,7 +23,8 @@ body {
 
 .first-row button,
 .second-row button,
-.third-row button {
+.third-row button,
+.fourth-row button {
   font-size: 25px;
   border: 0.5px solid black;
   border-radius: 30px;
@@ -38,20 +39,23 @@ body {
 
 .first-row button:hover,
 .second-row button:hover,
-.third-row button:hover {
+.third-row button:hover,
+.fourth-row button:hover {
   background-color: darkgray;
 }
 
 .first-row button:active,
 .second-row button:active,
-.third-row button:active {
+.third-row button:active,
+.fourth-row button:active {
   transform: scale(0.95);
   background-color: #555;
 }
 
 .first-row,
 .second-row,
-.third-row {
+.third-row,
+.fourth-row {
   display: flex;
   padding: 10px;
   gap: 10px;
@@ -61,12 +65,14 @@ body {
 
 .first-row .operations,
 .second-row .operations,
-.third-row .operations {
+.third-row .operations,
+.fourth-row .operations {
   background-color: orange;
 }
 
 .first-row .operations:hover,
 .second-row .operations:hover,
-.third-row .operations:hover {
+.third-row .operations:hover,
+.fourth-row .operations:hover {
   background-color: darkorange;
 }
