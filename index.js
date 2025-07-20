@@ -48,10 +48,12 @@ const clearButton = () => {
 };
 
 const negationButton = () => {
-  let currentValue = Number(display.textContent);
-  if (currentValue !== 0) {
-    display.textContent = currentValue * -1;
+  if (!operator) {
+    firstNumber = (Number(firstNumber) * -1).toString();
+  } else if (secondNumber !== null) {
+    secondNumber = (Number(secondNumber) * -1).toString();
   }
+  displayText();
 };
 
 const percentageButton = () => {
